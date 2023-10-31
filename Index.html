@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Compact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" 
+     referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dycalendar.css">
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+   <div class="compactcontainer">
+        <div class="compactcover">
+            <button id="buttontask">Taskpad</button>
+            <button id="buttonweather">Weather</button>
+            <button id="buttonnews" style="display: none;">News <br> Today</button>
+
+            <div class="footer">
+                <div class="iconmusic">
+                    <i class="fa-solid fa-music"></i> 
+                    <audio controls>
+                        <source src="[ Epic Short Type Instrumental ] Cinematic [ FREE NO COPYRIGHT MUSIC ] Alex-Productions - Story..mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+               
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0000" fill-opacity="1" d="M0,96L120,133.3C240,171,480,245,720,240C960,235,1200,149,1320,106.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+            </div>
+            <div class="calendar">
+                <div class="box">
+                    <div class="container">
+                        <div id="dycalendar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="todoappdiv">
+            <div class="todoContainer">
+                <form action="">
+                         <input type="text" class="todo-input">
+                            <button class="todo-button" type="submit">
+                        <i class="fas fa-plus-circle fa-lg"></i>
+                    </button>
+                </form>
+            <div class="select">
+                     <select name="todos" class="filter-todo">
+                        <option value="all">All</option>
+                            <option value="completed">Completed</option>
+
+                        <span>&#9654</span>
+                     </select>
+                </div>
+                    <section class="section">
+                        <div class="todo-container">
+                        <ul class="todo-list"></ul>
+                        </div>
+                            <div class="clock">
+                                <div class="hour">
+                                    <div class="hr" id="hr"></div>
+                                 </div>
+                                 <div class="min">
+                                     <div class="mn" id="mn"></div>
+                                 </div>
+                                <div class="sec">
+                                    <div class="sc" id="sc"></div>
+                                </div>
+                            </div>
+                    </section>  
+    </div>
+        </div>
+        <div class="weatherappdiv">
+            <div class="card">
+                <h2 class="wcitytop"></h2>
+                <div class="search">
+                    <input type="text" class="search-bar" placeholder="Enter a city to search. . ." >
+                    <button class="searchbtn" ><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+                <div class="weatherdiv">
+                        <div class="weatherIcon">
+                            <lord-icon
+                                 src="https://cdn.lordicon.com/oyclgnwc.json"
+                                 trigger="hover"
+                                 colors="primary:#121331,secondary:#08a88a"
+                                 stroke="60"
+                                 scale="50"
+                                 style="width:80px;height:80px">
+                            </lord-icon>
+                        </div>
+                        <div class="weathercontent">
+                            <div class="wcity"> </div>
+                            <div class="wcountry"> </div>
+                            <div class="wtemp"></div>
+                            <img src="" alt="" class="wicon">
+                            <div class="wdescription"></div>
+                            <div class="whumidity"></div>
+                            <div class="wwind"></div>
+                        </div>
+                        <button class="weatherbutton" >Weather Today</button>
+                       
+                </div>
+                <div class="forecastdiv">
+                    <div class="forecastIcon">
+                        <lord-icon
+                             src="https://cdn.lordicon.com/alnsmmtf.json"
+                             trigger="hover"
+                             colors="primary:#121331,secondary:#08a88a"
+                             style="width:80px;height:80px">
+                         </lord-icon>
+                    </div>
+        
+        
+                   <div class="forecastcontent">
+                    <div class="forecast element1">
+                             <div class="localday"></div>
+                             <div class="mintemp"></div>
+                             <div class="maxtemp"></div>
+                             <img src="" alt="" class="icon">
+                             <div class="description"></div>
+                             <div class="rainchance"></div>
+                   
+                     </div>
+                        <div class="forecast element2">
+                            <div class="localday1"></div>
+                            <div class="mintemp1"></div>
+                            <div class="maxtemp1"></div>
+                            <img src="" alt="" class="icon1">
+                            <div class="description1"></div>
+                            <div class="rainchance1"></div>
+                        </div>
+                   </div>
+                     
+                    <button class="forecastbutton">View Forecast</button>
+            </div>
+             
+                <button class="btnexit"> 
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                </button>
+               <button class="hometitle">Home</button>
+            
+            </div>
+        </div>
+        <div class="newsappdiv"></div>
+        <button id="collapsecompact">X</button>
+   </div>
+   <script src="dycalendar.js"></script>
+   <script>
+       dycalendar.draw({
+           target:'#dycalendar',
+           type: 'month',
+           highlighttargetdate: true,
+           prevnextbutton:'show',
+           
+       })
+   </script>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+    <script src="script2.js"></script>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/0e031cba96.js" crossorigin="anonymous"></script>
+</body>
+</html>

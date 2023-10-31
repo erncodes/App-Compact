@@ -1,0 +1,458 @@
+
+body
+{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+    transition: all 2s ease;
+    font-family: 'Dongle', sans-serif;
+
+}
+.card
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(Wallpaper6.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    height: 550px;
+    width: 800px;
+    position: relative;
+}
+.search
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 1%;
+    width: 70%;
+    height: fit-content;
+    background: white;
+    z-index: 10;
+    position: absolute;
+    border-radius:40px;
+    transition: transform 2s;
+
+}
+.search.active
+{
+    transform: translateY(-150px);
+    background: transparent;
+}
+.search.top
+{
+    transform: translateY(-220px);
+}
+.todo-button
+{
+    background: transparent;
+    color: white;
+    font-size: 35px;
+    transition: all 1s ease;
+}
+.todo-button:hover
+{
+    background: transparent;
+    transform: scale(1.1);
+    color: white;
+}
+.search-bar
+{
+    border-radius: 40px;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: lightgray;
+    transition: transform 2s ease-out;
+
+}
+.search-bar.active
+{
+    z-index: 2;
+    pointer-events: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+    font-weight: bolder;
+    background: transparent;
+    text-transform: uppercase; 
+    font-size: 30px;  
+}
+
+.search-bar::placeholder
+{
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    font-weight: bold;
+}
+.searchbtn
+{
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background: rgb(138, 132, 132);
+    transition: 2s ease-in;
+}
+.searchbtn.active
+{
+    display: none;
+}
+
+.search-bar:focus
+{
+    background: lightgray;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.weatherdiv 
+{
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.881);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 2s ease;
+    margin: 20px;
+    opacity: 0;
+}
+.weatherdiv.active
+{
+    opacity: 1;
+    overflow: hidden;
+    transition: 2s;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.881);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 2s ease;
+    margin: 20px;
+}
+.weatherdiv.result
+{
+    width: 600px;
+    height: 400px;
+}
+.forecastdiv
+{
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.818);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 2s ease;
+    margin: 20px;
+    opacity: 0;
+}
+.forecastdiv.active
+{
+    transition: 2s ease;
+    opacity: 1;
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.818);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 2s ease;
+    margin: 20px;
+}
+.hometitle
+{
+    display: none;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    bottom: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 20;
+    transition: 0.5s ease ;
+}
+.hometitle:hover
+{
+    transform: scale(1.1);
+}
+.forecastdiv.result
+{
+    width: 700px;
+    height: 400px;
+}
+.weatherIcon
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 70px;
+    right: 85px;
+    z-index: 9;
+}
+.forecastIcon
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 70px;
+    right: 85px;
+    z-index: 9;
+}
+
+.weatherbutton
+{
+  display: flex;
+  justify-content: center;
+  background: rgb(148, 148, 156);
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  right: 65px;
+  cursor: pointer;
+  transition: 1s ease;
+}
+.weatherbutton:hover
+{
+    color: rgb(0, 0, 0);
+    background:#60e798;
+    transform: scale(1.1);
+}
+
+.weathercontent
+{
+    display: none;
+    background: white;
+    position: absolute;
+    line-height: 40px;
+    font-size: 20px;
+    top: 30px;
+    left: 200px;
+    border-radius: 30px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.weathercontent.active
+{
+    display: block;
+    width: 200px;
+    height: 300px;
+    line-height: 30px;
+    background: transparent;
+}
+.forecastcontent
+{
+    display: none;
+    background: white;
+    position: absolute;
+    top: 5%;
+    
+    border-radius: 10px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+.forecastcontent.active
+{
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 800px;
+    height: 100%;
+    background: transparent;
+}
+.country,.wcountry
+{
+    color: rgb(10, 57, 110);
+    letter-spacing: 2px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: bold;
+}
+.city,.wcity
+{
+    color: rgb(8, 1, 1);
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Dongle', sans-serif
+}
+.wcitytop
+{
+    z-index: 20;
+    position: absolute;
+    top: 30px;
+    text-shadow: 5px 5px 5px black;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    transition: all 2s ease;
+}
+.wtemp
+{
+    margin: 1rem;
+    font-size: 30px;
+    float: left;
+}
+
+.element1
+{
+    display: none;
+    background: rgba(255, 0, 0, 0);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+}
+.element2
+{
+    display: none;
+    background: rgba(255, 0, 0, 0);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 360px;
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+.element1.active
+{
+    display: block;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    flex-direction: column;
+    line-height: 30px;
+    align-items: center;
+    z-index: 10;
+}
+.element2.active
+{
+    display: block;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: rgba(255, 0, 0, 0);
+    display: flex;
+    color: rgb(0, 0, 0);
+    flex-direction: column;
+    justify-content: center;
+    line-height: 30px;
+    align-items: center;
+    z-index: 10;
+}
+.localday,.localday1
+{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.forecastbutton
+{
+    display: flex;
+    justify-content: center;
+    background: rgb(148, 148, 156);
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    right: 65px;
+    cursor: pointer;
+    transition: 1s ease-in;
+}
+.forecastbutton:hover
+{
+    color: rgb(0, 0, 0);
+    background:#60e798;
+    transform: scale(1.1);
+}
+.btnexit
+{
+    position: absolute;
+    display: none;
+    bottom: 5px;
+    right: 5px;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    border: none;
+    outline: none;
+    animation: animate 2s infinite ;
+    cursor: pointer;
+    z-index: 10;
+}
+.btnexit.active
+{
+    display: block;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform:scale(1);
+    }
+   50%
+    {
+        transform: scale(1.1);
+    }
+   100%
+    {
+        transform: scale(1);
+    }
+}

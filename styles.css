@@ -1,0 +1,303 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #60e798;
+}
+.compactcontainer
+{
+    position: relative;
+    margin-top: 10px;
+    height: 600px;
+    min-width: 1000px;
+    background-image: url(Wallpaper7.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.compactcover
+{
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    right: 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 20px;
+    transition: 2s ease;
+    z-index: 3;
+}
+.compactcover.active
+{
+    width: 180px;
+}
+.compactcover button
+{
+    margin: 50px 10px;
+    width: 120px;
+    border-radius: 5px;
+    transform: translateY(50px);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    background: rgb(217, 14, 14);
+    padding: 10px;
+    transition: all 2s ease;
+}
+#buttonnews
+{
+    display: none;
+}
+.footer
+{
+    width: 650px;
+    height: 150px;
+    background-image: url(Wallpaper7.jpg);
+    background-size: cover;
+    background-position: bottom;
+    align-self: center;
+    margin-top: 80px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 2s ease;
+
+}
+.footer.active
+{
+    opacity: 0;
+    transform: scale(0);
+}
+.footer svg
+{
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    opacity: 0.5;
+}
+.footer audio
+{
+    position: absolute;
+    right: 40px;
+    top: 50px;
+    width: 450px;
+    z-index: 6;
+    border: none;
+    font-size: 70px;
+    outline: none;
+    color: #9a1616;
+}
+.footer i
+{
+    position: absolute;
+    left: 50px;
+    top: 40px;
+}
+.iconmusic
+{
+    width: 120px;
+    height: 120px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(249, 0, 0);
+    font-size: 70px;
+    z-index: 1;
+}
+.calendar
+{
+    position: absolute;
+    right: 80px;
+    top: 40px;
+    width: 350px;
+    height: 320px;
+    overflow: hidden;
+    transition: all 2s ease;
+}
+.calendar.active
+{
+    transform: scale(0);
+    opacity: 0;
+}
+.todoappdiv
+{
+    position: absolute;
+    right: 140px;
+    height: 550px;
+    width: 800px;
+    background: rgba(0, 0, 0, 0.679);
+    transform: translateX(770px);
+    z-index: 1;
+    transition: 2s ease;
+    border-radius: 10px;
+
+}
+.todoappdiv.active
+{
+    transform: translateX(-45px);
+}
+.weatherappdiv
+{
+    position: absolute;
+    right: 140px;
+    height: 550px;
+    width: 800px;
+    background: transparent;
+    transform: translateX(770px);
+    z-index: 1;
+    transition: 2s ease;
+    border-radius: 10px;
+
+}
+.weatherappdiv.active
+{
+    transform: translateX(-45px);
+}
+.newsappdiv
+{
+    position: absolute;
+    right: 140px;
+    height: 550px;
+    width: 800px;
+    background: orange;
+    transform: translateX(770px);
+    z-index: 1;
+    transition: 2s ease;
+    border-radius: 10px;
+}
+.newsappdiv.active
+{
+    transform: translateX(-45px);
+}
+#collapsecompact
+{
+    position: absolute;
+    transform: translateX(-80px);
+    bottom: 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    outline: none;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+#collapsecompact:hover
+{
+    background: red ;
+    color: white;
+}
+
+
+.box
+{
+    position: relative;
+}
+.container
+{
+    position: relative;
+    min-width: 350px;
+    height: 320px;
+}
+#dycalendar
+{
+    width: 100%;
+}
+#dycalendar table
+{
+    width: 100%;
+    border-spacing: 8px;
+    margin-top: 10px;
+}
+#dycalendar table tr:nth-child(1) td
+{
+    background: white;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.664),
+    -5px -5px 10px white;
+}
+
+#dycalendar table td
+{
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.664),
+    -5px -5px 10px white;
+}
+#dycalendar table td:hover
+{
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.664),
+    -5px -5px 10px white;
+}
+#dycalendar table td:first-child
+{
+    color: red;
+}
+#dycalendar table tr:nth-child(1) td:nth-child(1)
+{
+    background: red;
+}
+.dycalendar-month-container .dycalendar-target-date
+{
+    background: rgb(255, 0, 0) !important;
+    color: #fff !important;
+}
+.dycalendar-month-container .dycalendar-header 
+.dycalendar-prev-next-btn.next-btn
+{
+    width: 20px;
+    height: 20px;
+    font-size: 30px;
+    right: 20px;
+    color: rgb(255, 0, 0);
+    transform: translateX(-8px);
+    font-weight: bold;
+}
+.dycalendar-month-container .dycalendar-header 
+.dycalendar-prev-next-btn.prev-btn
+{
+    width: 20px;
+    height: 20px;
+    font-size: 30px;
+    left: 20px;
+    color: rgb(255, 0, 0);
+    transform: translateX(8px);
+    font-weight: bold;
+}
+.dycalendar-span-month-year
+{
+    color: rgb(0, 0, 0);
+    text-shadow: 25px 25px 25px rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 400;
+    font-weight: bold;
+}
+
