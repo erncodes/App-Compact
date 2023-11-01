@@ -21,7 +21,7 @@ let weather = {
     apiKey: "e3d7ddf7dbd64ceba10183600222712",
     fetchWeather: function(city) {
         fetch(
-            "http://api.weatherapi.com/v1/current.json?key="
+            "https://api.weatherapi.com/v1/current.json?key="
             + this.apiKey +"&q=" 
             + city +
              "&aqi=no" 
@@ -52,7 +52,7 @@ let weather = {
         apiKey: "e3d7ddf7dbd64ceba10183600222712",
         fetchForecast: function(city) {
             fetch(
-                "http://api.weatherapi.com/v1/forecast.json?key="
+                "https://api.weatherapi.com/v1/forecast.json?key="
                 +this.apiKey+
                 "&q="
                 +city+
